@@ -1,0 +1,33 @@
+body {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSjs7j9-rLFwFVwsIfNd_BqQqy0HKVeRdzzJ0syvcGRHhmIbErU&usqp=CAU');
+    background-size: auto 100vh;
+    color: lime;
+    font-family: Arial;
+    height: 100vh;
+  }
+  .menu {
+    background-color: black;
+  }
+  .menu ul {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .menu li{
+    list-style: none;
+  }
+  
+  a {
+    color: lime;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .site-title {
+    text-align: center;
+  }
+  .site-subtitle {
+    text-align: center;
+    font-style: italic;
+  }
