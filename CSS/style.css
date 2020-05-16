@@ -1,12 +1,57 @@
+/* reset do css */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 body {
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSjs7j9-rLFwFVwsIfNd_BqQqy0HKVeRdzzJ0syvcGRHhmIbErU&usqp=CAU');
-    background-size: auto 100vh;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(36,45,36,1) 50%, rgba(0,0,0,1) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(36,45,36,1) 50%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,1) 0%, rgba(36,45,36,1) 50%, rgba(0,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+    background-attachment: fixed;
     color: lime;
-    font-family: Arial;
+    font-family: 'Source Code Pro', monospace;
     height: 100vh;
+    font-size: 14px;
   }
+  
+  @media (min-width: 200px) {
+    body{
+      font-size: 14px;
+    }
+    .img-portfolio {
+      width: 16em;
+      height: 9em;
+    }
+  }
+
+  @media (min-width: 500px) {
+  body{
+    font-size: 18px;
+  }
+  }
+
+ @media (min-width: 700px) {
+  body{
+    font-size: 22px;
+  }
+ }
+
+  header {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+  }
+
   .menu {
     background-color: black;
+    position: fixed;
+    width: 100vw;
+    top: 0px;
   }
   .menu ul {
     display: flex;
@@ -15,19 +60,109 @@ body {
   .menu li{
     list-style: none;
   }
-  
-  a {
+
+  .menu a {
+    display: block;
+    padding: 10px 30px;
     color: lime;
     text-decoration: none;
   }
-  a:hover {
-    text-decoration: underline;
+  .menu a:active,
+  .menu a:hover {
+    text-decoration: none;
+    background-color:rgb(24, 24, 24);
+    transition: background-color 2s;
   }
-  
+  /*
+  .myname {
+    transform: scale(0.2) translateY(60vh);
+    opacity: 0;
+  }
+  */
+
   .site-title {
     text-align: center;
+    font-size: 2.8em;
+    font-family: 'Press Start 2P', cursive;
   }
   .site-subtitle {
     text-align: center;
     font-style: italic;
+    font-size: 1.8em;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.2em;
+  }
+  
+  .portfolio {
+    min-height: 100vh;
+  }
+  .contato,
+  .portfolio {
+    padding: 2em;
+  }
+  .contato h2,
+  .portfolio h2 {
+  font-family: 'Audiowide', cursive;
+  font-size: 2.8em;
+  color: whitesmoke;
+  margin-bottom: 1.3em;
+}
+  .portfolio .grid {
+    display: grid;
+    gap: 2em;
+    justify-content: center;
+  }
+
+  @media (min-width: 850px) {
+    .portfolio .grid {
+      grid-template-columns: 400px 400px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .portfolio .grid {
+      grid-template-columns: repeat(3, 400px);
+    }
+    .portfolio figure {
+      text-align: center;
+    }
+  }
+
+  .img-portfolio {
+    width: 16em;
+    height: 9em;
+    object-fit: cover;
+  }
+  .img-portfolio:active,
+  .img-portfolio:hover {
+    transform: scale(1.2);
+    transition: transform 500ms;
+  }
+  @media (min-width: 1300px) {
+    body {
+      font-size: 26px;
+    }
+  }
+  @media (min-width: 1700px) {
+    body {
+      font-size: 32px;
+    }
+    .portfolio .grid {
+      justify-content: space-evenly;
+    }
+  }
+
+  .contato a {
+    color: whitesmoke;
+    font-size: 3em;
+    text-decoration: none;
+  }
+  .contato a:active,
+  .contato a:hover {
+    text-decoration: none;
+    text-shadow: 0px 0px 20px purple;
+    transition: background-color, color, 2s;
+    font-size: 4em;
+  }
+  .contato .icons {
+    text-align: center;
   }
