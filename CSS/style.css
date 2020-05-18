@@ -73,12 +73,19 @@ body {
     background-color:rgb(24, 24, 24);
     transition: background-color 2s;
   }
-  /*
   .myname {
-    transform: scale(0.2) translateY(60vh);
-    opacity: 0;
+    animation: linear 3s titleAnimation;
   }
-  */
+  @keyframes titleAnimation {
+    0% {
+      transform: scale(0.2) translateY(60vh);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
 
   .site-title {
     text-align: center;
@@ -96,17 +103,66 @@ body {
   .portfolio {
     min-height: 100vh;
   }
+  .aboutMe,
   .contato,
   .portfolio {
     padding: 2em;
+    margin-left: auto;
+    margin-right: auto;
   }
+  @media (min-width: 1200px) {
+    .aboutMe,
+    .contato,
+    .portfolio {
+      max-width: 1200px;
+  }
+  }
+  .aboutMe h2,
   .contato h2,
   .portfolio h2 {
   font-family: 'Audiowide', cursive;
   font-size: 2.8em;
   color: whitesmoke;
-  margin-bottom: 1.3em;
+  margin-bottom: 0.6em;
+  margin-top: 0.4em;
 }
+  @media (min-width: 200px) {
+    .aboutMe .figMine {
+      text-align: center;
+    }
+  }
+  @media (min-width: 400px) {
+    .aboutMe .figMine {
+      float: right;
+      margin-left: 3em;
+    }
+  }
+  .aboutMe .figMine img {
+    border-radius: 5%;
+    width: 12em;
+    height: auto;
+    transform: rotateY(180deg);
+    cursor: pointer;
+  }
+  .aboutMe .figMine img:hover,
+  .aboutMe .figMine img:active {
+    transform: rotateY(0deg);
+  }
+
+  .aboutMe p {
+    color: whitesmoke;
+    font-size: 1em;
+    margin-bottom: 1em;
+    text-align: justify;
+    text-indent: 3em;
+  }
+  .aboutMe a {
+    color: lime;
+  }
+  .aboutMe a:hover {
+    background-color: red;
+    color: black;
+  }
   .portfolio .grid {
     display: grid;
     gap: 2em;
@@ -131,6 +187,8 @@ body {
     width: 16em;
     height: 9em;
     object-fit: cover;
+    border: 7px solid rgb(59, 56, 52);
+    border-radius: 0% 20% 20% 20%;
   }
   .img-portfolio:active,
   .img-portfolio:hover {
