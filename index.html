@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,12 +20,26 @@
             <li><a href="#contato">Contact</a></li>
           </ul>
         </nav>
-        <div class="myname">
-          <h1 class="site-title">Gabriel Klark</h1>
-          <h2 class="site-subtitle">Jr. Developer</h2>
+        <div id="mynameid" class="myname">
+          <h1 id="siteTitle" class="site-title">Gabriel Klark</h1>
+          <h1 id="siteSubtitle" class="site-subtitle">Jr. Developer</h2>
         </div>
     </header>
+    <script>
+      setInterval(function(){ 
+        function typeWriter(element) {
+        const textArray = element.innerHTML.split('');
+        element.innerHTML = '';
+        textArray.forEach((letter, i) => {
+          setTimeout(() => element.innerHTML += letter, 150 * i);
+        });
+        }
+        const title = document.querySelector('#siteTitle');
+        typeWriter(title); 
+      }, 3000);
+      
 
+    </script>
     <section class="aboutMe" id="about">
 
       <h2 class="aboutTitle">About Me...</h2>
@@ -36,7 +50,7 @@
 
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique totam est laborum nobis incidunt natus sed! Optio eos incidunt cumque ipsum velit debitis enim numquam quas, veniam aspernatur, quisquam non?</p>
       <p>Quam dignissimos unde alias ab, odit nulla tempore et excepturi in harum, provident nostrum soluta natus beatae itaque </p>
-      <p>Website by an Alura's <a target="_blank" href="https://www.alura.com.br/imersao-css">#ImersãoHipster.CSS</a> student ;-)</p>
+      <p>Website proudly created by an <a target="_blank" href="https://www.alura.com.br/imersao-css">Alura's #ImersãoHipster.CSS</a> student ;)</p>
     </section>
 
     <section class="portfolio" id="portfolio">
@@ -75,6 +89,7 @@
       </div>
       
     </section>
+    
     <section class="contato" id="contato">
       <h2>Contato</h2>
       <div class="grid icons">

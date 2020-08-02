@@ -52,6 +52,7 @@ body {
     position: fixed;
     width: 100vw;
     top: 0px;
+    z-index: 1;
   }
   .menu ul {
     display: flex;
@@ -66,6 +67,7 @@ body {
     padding: 10px 30px;
     color: lime;
     text-decoration: none;
+    transition: all 2s;
   }
   .menu a:active,
   .menu a:hover {
@@ -73,8 +75,22 @@ body {
     background-color:rgb(24, 24, 24);
     transition: background-color 2s;
   }
+  .site-title::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: blink .7s infinite;
+  }
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
   .myname {
-    animation: linear 3s titleAnimation;
+    animation: linear 2.5s titleAnimation;
   }
   @keyframes titleAnimation {
     0% {
@@ -86,6 +102,8 @@ body {
       opacity: 1;
     }
   }
+  /*Title Animation*/
+
 
   .site-title {
     text-align: center;
@@ -147,6 +165,7 @@ body {
   .aboutMe .figMine img:hover,
   .aboutMe .figMine img:active {
     transform: rotateY(0deg);
+    box-shadow: 0px 0px 40px rgba(255, 0, 0, 0.513);
   }
 
   .aboutMe p {
@@ -158,10 +177,13 @@ body {
   }
   .aboutMe a {
     color: lime;
+    transition: 500ms;
   }
-  .aboutMe a:hover {
-    background-color: red;
-    color: black;
+  .aboutMe a:hover,
+  .aboutMe a:active {
+    text-shadow: 0px 0px 20px red;
+    color: whitesmoke;
+    transition: 500ms;
   }
   .portfolio .grid {
     display: grid;
@@ -187,8 +209,7 @@ body {
     width: 16em;
     height: 9em;
     object-fit: cover;
-    border: 7px solid rgb(59, 56, 52);
-    border-radius: 0% 20% 20% 20%;
+    border-radius: 20% 20% 20% 20%;
   }
   .img-portfolio:active,
   .img-portfolio:hover {
@@ -213,14 +234,17 @@ body {
     color: whitesmoke;
     font-size: 3em;
     text-decoration: none;
+    transition: all 2s;
   }
   .contato a:active,
   .contato a:hover {
     text-decoration: none;
-    text-shadow: 0px 0px 20px purple;
+    text-shadow: 0px 0px 20px red;
     transition: background-color, color, 2s;
     font-size: 4em;
   }
   .contato .icons {
     text-align: center;
   }
+  /* Slider */
+  
